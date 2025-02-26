@@ -1,3 +1,4 @@
+@use 'sass:list';
 //Creamos la lista con los colores de fondo de las filas almacenandolas todas en una única variable
 $colorfila: green, red, pink, aquamarine, yellow,brown,orange;
 //Creamos la variable con la lista de titulos
@@ -24,11 +25,11 @@ $factor-desktop: 1;
 table {
     width: 100%;
     border-collapse: collapse;
-  
+
     tr {//Con through leng(variable) recorre la longitud de la misma
-      @for $i from 1 through length($colorfila) {
+      @for $i from 1 through list.length($colorfila) {
         &:nth-child(#{$i}) {
-          background-color: nth($colorfila, $i);
+          background-color: list.nth($colorfila, $i);
         }
       }
     }
@@ -47,7 +48,7 @@ table{
 //Cambiamos el tamaño de la fuente con bucle desde h1 hasta h6
 @for $i from 1 through 6 {
     h#{$i} {
-      font-size: 0.5rem * $i; // El tamaño de la fuente aumenta con el índice
+      font-size: 0.5rem * $i; // El tamaño de la fuente aumenta al aumentar la iteración
     }
 }
 //Creamos la funcion calcularAncho
