@@ -1,0 +1,75 @@
+//Creamos la lista con los colores de fondo de las filas almacenandolas todas en una única variable
+$colorfila: green, red, pink, aquamarine, yellow,brown,orange;
+//Creamos la variable con la lista de titulos
+$estilos: h6, h5, h4, h3, h2, h1;
+//Creamos la variable del ancho base de escritorio
+$anchobase: 1250px;
+//Creamos las variables de los breakpoints (mediaquerys)
+$mobile: 480px;
+$tablet: 768px;
+$desktop: 1024px;
+//Creamos las variables de los factores de conversión de anchura del dispositivo
+$basedesktop: 1024px;
+$factor-mobile: 0.9;
+$factor-tablet: 0.8;
+$factor-desktop: 1;
+
+*{
+    box-sizing: border-box;
+    margin:10px;
+    padding: 0;
+}
+
+//Creamos un bucle foreach para ir recorriendo la lista de colores, asignando a cada hijo de fila un color diferente.
+table {
+    width: 100%;
+    border-collapse: collapse;
+  
+    tr {//Con through leng(variable) recorre la longitud de la misma
+      @for $i from 1 through length($colorfila) {
+        &:nth-child(#{$i}) {
+          background-color: nth($colorfila, $i);
+        }
+      }
+    }
+    th, td {
+      padding: 10px;
+      border: 1px solid black;
+      text-align: left;
+    }
+}
+//Damos formato a la tabla
+table{
+    text-align: center;
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+//Cambiamos el tamaño de la fuente con bucle desde h1 hasta h6
+@for $i from 1 through 6 {
+    h#{$i} {
+      font-size: 0.5rem * $i; // El tamaño de la fuente aumenta con el índice
+    }
+}
+//Creamos la funcion calcularAncho
+@function cacularAncho($base, $factor){
+    @return $base * $factor;
+}
+//Aplicamos los mediaqueries de cada breakpoint sobre la tabla
+.cuerpaso{
+    width: 100%;
+    @media(max-width: $mobile){
+        body>table{
+            width: cacularAncho($basedesktop, $factor-mobile);
+        }
+    }
+    @media(max-width: $tablet){
+        body>table{
+            width: cacularAncho($basedesktop, $factor-tablet);
+        }
+    }
+    @media(max-width: $mobile){
+        body>table{
+            width: cacularAncho($basedesktop,$factor-desktop)
+        }
+    }
+}
