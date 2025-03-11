@@ -1,0 +1,11 @@
+//Creamos la variable del ancho base de escritorio
+$anchobase: 1250px;
+//Creamos las variables de los breakpoints (mediaquerys)
+$mobile: 480px;
+$tablet: 768px;
+$desktop: 1024px;
+//Creamos las variables de los factores de conversión de anchura del dispositivo
+$basedesktop: 1024px;
+$factor-mobile: 0.9;
+$factor-tablet: 0.8;
+$factor-desktop: 1;

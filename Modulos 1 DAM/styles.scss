@@ -15,6 +15,7 @@ $factor-mobile: 0.9;
 $factor-tablet: 0.8;
 $factor-desktop: 1;
 
+/**Estilos por defecto a todos los elementos*/
 *{
     box-sizing: border-box;
     margin:10px;
@@ -45,7 +46,7 @@ table{
     border: 2px solid black;
     border-collapse: collapse;
 }
-//Cambiamos el tamaño de la fuente con bucle desde h1 hasta h6
+//Cambiamos el tamaño de la fuente con bucle desde h1 hasta h6 con un bucle
 @for $i from 1 through 6 {
     h#{$i} {
       font-size: 0.5rem * $i; // El tamaño de la fuente aumenta al aumentar la iteración
@@ -58,6 +59,7 @@ table{
 //Aplicamos los mediaqueries de cada breakpoint sobre la tabla
 .cuerpaso{
     width: 100%;
+    gap: 200px;
     @media(max-width: $mobile){
         body>table{
             width: cacularAncho($basedesktop, $factor-mobile);

@@ -1,0 +1,64 @@
+@use 'sass:list';
+/**Importamos archivos*/
+@import "variables";
+@import "mixins";
+@import "funciones";
+@import "estructuras_repetitivas";
+@import "temas";
+@import "menu";
+
+/**Estilos por defecto a todos los elementos*/
+*{
+    box-sizing: border-box;
+    margin:10px;
+    padding: 0;
+
+}
+ul{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+
+/**Le damos estilos a la tabla, th y td*/
+table {    
+    margin-top: 300px;
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    border: 2px solid black;
+    border-collapse: collapse;
+  
+    th, td {
+      padding: 10px;
+      border: 1px solid black;
+      text-align: center;
+      height: 100px;
+      
+    }
+}
+div{
+    @include center-inline
+}
+
+/**Formateamos los mediaquerys*/
+.cuerpaso{
+    @include center-block;
+       @media(max-width: $mobile){
+        body>table{
+            width: cacularAncho($basedesktop, $factor-mobile);
+        }
+    }
+    @media(max-width: $tablet){
+        body>table{
+            width: cacularAncho($basedesktop, $factor-tablet);
+        }
+    }
+    @media(max-width: $mobile){
+        body>table{
+            width: cacularAncho($basedesktop,$factor-desktop)
+        }
+    }
+}

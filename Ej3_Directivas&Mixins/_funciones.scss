@@ -1,0 +1,4 @@
+//Creamos la funcion calcularAncho
+@function cacularAncho($base, $factor){
+    @return $base * $factor;
+}

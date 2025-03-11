@@ -1,0 +1,12 @@
+//Creamos un mixins para centrar bloque en su padre:
+@mixin center-block {
+    position: absolute;  // Establece el elemento como posicionado absolutamente dentro de su contenedor.
+    inset: 0;            // Equivale a `top: 0; right: 0; bottom: 0; left: 0;`, es decir, el elemento se "pega" a todos los lados del contenedor.
+    margin: auto;        // Aplica márgenes automáticos, lo que permite centrar el elemento tanto horizontal como verticalmente.
+  }
+  
+//Creamos un mixins para centrar elementos en línea dentro de un bloque:
+@mixin center-inline {
+    display: flex;
+    align-items: center; // Centra verticalmente
+}

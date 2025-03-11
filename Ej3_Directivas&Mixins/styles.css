@@ -1,0 +1,119 @@
+@charset "UTF-8";
+/**Importamos archivos*/
+tr:nth-child(1) {
+  background-color: green;
+}
+tr:nth-child(2) {
+  background-color: red;
+}
+tr:nth-child(3) {
+  background-color: pink;
+}
+tr:nth-child(4) {
+  background-color: aquamarine;
+}
+tr:nth-child(5) {
+  background-color: yellow;
+}
+tr:nth-child(6) {
+  background-color: brown;
+}
+tr:nth-child(7) {
+  background-color: orange;
+}
+
+h1 {
+  font-size: 0.5rem;
+}
+
+h2 {
+  font-size: 1rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 2rem;
+}
+
+h5 {
+  font-size: 2.5rem;
+}
+
+h6 {
+  font-size: 3rem;
+}
+
+.sticky-menu {
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  border-radius: 15px;
+  width: 100%; /* Asegúrate de que el menú ocupe todo el ancho */
+  z-index: 1000; /* Para asegurar que el menú esté por encima de otros elementos */
+  background-color: wheat; /* O cualquier color de fondo que desees */
+  padding: 0px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra opcional para mayor visibilidad */
+}
+
+/**Estilos por defecto a todos los elementos*/
+* {
+  box-sizing: border-box;
+  margin: 10px;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+/**Le damos estilos a la tabla, th y td*/
+table {
+  margin-top: 300px;
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  border: 2px solid black;
+  border-collapse: collapse;
+}
+table th, table td {
+  padding: 10px;
+  border: 1px solid black;
+  text-align: center;
+  height: 100px;
+}
+
+div {
+  display: flex;
+  align-items: center;
+}
+
+/**Formateamos los mediaquerys*/
+.cuerpaso {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+}
+@media (max-width: 480px) {
+  .cuerpaso body > table {
+    width: 921.6px;
+  }
+}
+@media (max-width: 768px) {
+  .cuerpaso body > table {
+    width: 819.2px;
+  }
+}
+@media (max-width: 480px) {
+  .cuerpaso body > table {
+    width: 1024px;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

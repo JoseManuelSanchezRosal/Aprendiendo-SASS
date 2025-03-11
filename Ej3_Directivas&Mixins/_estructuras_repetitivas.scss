@@ -1,0 +1,19 @@
+@use 'sass:list';
+@import "temas";
+
+//Creamos un bucle foreach para ir recorriendo la lista de colores, asignando a cada hijo de fila un color diferente.
+
+tr {//Con through leng(variable) recorre la longitud de la misma
+  @for $i from 1 through list.length($colorfila) {
+    &:nth-child(#{$i}) {
+      background-color: list.nth($colorfila, $i);
+    }
+  }
+}
+
+//Cambiamos el tamaño de la fuente con bucle desde h1 hasta h6 con un bucle
+@for $i from 1 through 6 {
+    h#{$i} {
+      font-size: 0.5rem * $i; // El tamaño de la fuente aumenta al aumentar la iteración
+    }
+}
